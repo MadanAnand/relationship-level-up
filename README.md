@@ -13,7 +13,6 @@ expo start
 3. installed createNativeStackNavigator : npm install @react-navigation/native-stack
 4. I wanted bottom tab navigation. so tried : npm install @react-navigation/bottom-tabs
 5. Added React native hero icon pack for standard svg , npm i react-native-heroicons react-native-svg
-6. 
 
 ## Dev tools used for development
 1. VS Code 

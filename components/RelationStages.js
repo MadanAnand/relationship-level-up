@@ -4,7 +4,7 @@ import RelationCard from './RelationCard'
 
 const RelationStages = () => {
   return (
-    <ScrollView >
+    <ScrollView  horizontal>
       <RelationCard imgUrl='https://links.papareact.com/wru' title='testing'/>
       <RelationCard imgUrl='https://links.papareact.com/wru' title='testing'/>
       <RelationCard imgUrl='https://links.papareact.com/wru' title='testing'/>

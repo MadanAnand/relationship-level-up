@@ -1,30 +1,37 @@
 import { useNavigation } from "@react-navigation/native";
 import { useLayoutEffect } from "react";
-import { Image, Text, View } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
+import { Image, ScrollView, Text, View } from "react-native";
+import { SafeAreaView } from "react-native";
+import RelationStages from "../components/RelationStages";
 
 const HomeScreen = () => {
+    const navigation = useNavigation();
 
-const navigation = useNavigation();
-useLayoutEffect(()=>{
-navigation.setOptions({
+ useLayoutEffect(() =>{
+ navigation.setOptions({ 
     headerShown : false,
-});
-})
+ });
+ }, [])
 return (
-    <SafeAreaView>
-        {/* <Text className='text-green-500'> Testing is such a pain! </Text> */}
-        <View className='flex-row pb-5 space-x-5 items-center'>
+    <SafeAreaView className='bg-green-50'>
+        {/**Header */}
+        <View className='flex-row pb-5 mx-2 px-4 space-x-5 items-center'>
         <Image source={{
             uri:'https://links.papareact.com/wru'
         }}
-        className='h-10 w-10 p-4 rounded-full'>
+        className='h-8 w-8 p-x-2 rounded-full'>
             
         </Image>
-        <View>
+        <View className='flex-row'>
             <Text className='text-xl'>Hey Zsolt!</Text>
         </View>
         </View>
+        
+        {/**body */}
+  
+        <ScrollView className='flex-row bg-red-100' >
+            <RelationStages />
+        </ScrollView>
     </SafeAreaView>
 );
 }

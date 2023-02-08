@@ -15,7 +15,7 @@ const HomeScreen = () => {
 return (
     <SafeAreaView className='bg-green-50'>
         {/**Header */}
-        <View className='flex-row pb-5 mx-2 px-4 space-x-5 items-center'>
+        <View className='flex-row pb-5 mx-2 px-4 space-x-3 items-center'>
         <Image source={{
             uri:'https://links.papareact.com/wru'
         }}
@@ -28,9 +28,9 @@ return (
         
         {/**body */}
   
-        <ScrollView className='flex-row bg-red-100' >
+        <View className='bg-red-100' >
             <RelationStages />
-        </ScrollView>
+        </View>
     </SafeAreaView>
 );
 }

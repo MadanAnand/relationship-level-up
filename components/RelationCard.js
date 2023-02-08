@@ -1,15 +1,19 @@
 import { View, Text, ScrollView, TouchableOpacity, Image } from 'react-native'
 import React from 'react'
 
-const RelationCard = (imgUrl, title) => {
+const RelationCard = ({imgUrl, title}) => {
   return (
-    <TouchableOpacity className='relative mr-2'>
+    <TouchableOpacity className='relative mr-2 bg-slate-400'>
+      <View className='px-4'>
         <Image source={{
-            uri:'https://links.papareact.com/wru'
+            uri:imgUrl
         }}
-        className='h-10 w-10 p-x-2'>
+        className='h-20 w-20'>
         </Image>
-        <Text> test Images</Text>
+        <Text className='relative bottom-0 left-4 text-black font-bold'> 
+        {title}
+        </Text>
+        </View>
     </TouchableOpacity>
   )
 }

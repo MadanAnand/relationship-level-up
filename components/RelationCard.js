@@ -3,8 +3,8 @@ import React from 'react'
 
 const RelationCard = ({imgUrl, title}) => {
   return (
-    <TouchableOpacity className='relative mr-2 bg-slate-400'>
-      <View className='px-4'>
+    <TouchableOpacity className='relative mr-2 px-2 bg-slate-400'>
+      <View >
         <Image source={{
             uri:imgUrl
         }}

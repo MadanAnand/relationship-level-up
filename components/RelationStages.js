@@ -19,7 +19,7 @@ const RelationStages = () => {
     //   <RelationCard imgUrl="https://links.papareact.com/wru" title="Stage 2"/>
     //   <RelationCard imgUrl="https://links.papareact.com/wru" title="Stage 3"/>
     // </ScrollView>
-  <View className='my-10 '>
+  <View className='mx-5 my-5'>
     <View className='flex-row pb-2 mx-2 px-4 space-x-2 items-center'>
       <RelationCard imgUrl="https://links.papareact.com/wru" title="Stage 1"/>
       <RelationCard imgUrl="https://links.papareact.com/wru" title="Stage 2"/>

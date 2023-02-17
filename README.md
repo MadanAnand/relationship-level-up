@@ -16,6 +16,7 @@ expo start
 6. For backend :
     6.1  Learnt how Sanity(sanity.io) works. It's a CMS and has a query language of it's own. Pretty sleek integration.
     6.2 compared sanity.io with an BaaS . It's pretty similar to Sanity. (Up to 500MB database & 1GB file storage, Up to 2GB bandwidth, Up to 50MB file uploads)
+    6.3 compared Firebase for future proofing the app and it's a lot more complex to use it for the usecase than Sanity or other BaaS. 
 
 ## Dev tools used for development
 1. VS Code 

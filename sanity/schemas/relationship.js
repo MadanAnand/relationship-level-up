@@ -1,8 +1,8 @@
 import {defineField, defineType} from 'sanity'
 
 export default defineType({
-  name: 'post',
-  title: 'Post',
+  name: 'relationship',
+  title: 'Relationship',
   type: 'document',
   fields: [
     defineField({
@@ -20,10 +20,10 @@ export default defineType({
       },
     }),
     defineField({
-      name: 'author',
-      title: 'Author',
-      type: 'reference',
-      to: {type: 'author'},
+      name: 'player',
+      title: 'Players',
+      type: 'array',
+      of: [{type: 'reference', to: {type: 'player'}}],
     }),
     defineField({
       name: 'mainImage',
@@ -34,14 +34,14 @@ export default defineType({
       },
     }),
     defineField({
-      name: 'categories',
-      title: 'Categories',
+      name: 'relationshipStage',
+      title: 'RelationshipStage',
       type: 'array',
-      of: [{type: 'reference', to: {type: 'category'}}],
+      of: [{type: 'reference', to: {type: 'relationshipStage'}}],
     }),
     defineField({
-      name: 'publishedAt',
-      title: 'Published at',
+      name: 'realtionshipStartDate',
+      title: 'Realtionship Start Date',
       type: 'datetime',
     }),
     defineField({
@@ -54,12 +54,12 @@ export default defineType({
   preview: {
     select: {
       title: 'title',
-      author: 'author.name',
+      player: 'player.name',
       media: 'mainImage',
     },
     prepare(selection) {
-      const {author} = selection
-      return {...selection, subtitle: author && `by ${author}`}
+      const {player} = selection
+      return {...selection, subtitle: player && `by ${player}`}
     },
   },
 })

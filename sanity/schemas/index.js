@@ -1,6 +1,7 @@
 import blockContent from './blockContent'
-import category from './category'
-import post from './post'
-import author from './author'
+import relationshipStage from './relationshipStage'
+import relationship from './relationship'
+import player from './player'
+import objective from './objective'
 
-export const schemaTypes = [post, author, category, blockContent]
+export const schemaTypes = [relationship, player, relationshipStage, objective, blockContent]

@@ -7,7 +7,7 @@ export default defineConfig({
   name: 'default',
   title: 'relationship-level-up',
 
-  projectId: 'uctld5bp',
+  projectId: 'mu0gql27',
   dataset: 'production',
 
   plugins: [deskTool(), visionTool()],

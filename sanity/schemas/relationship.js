@@ -19,12 +19,12 @@ export default defineType({
         maxLength: 96,
       },
     }),
-    defineField({
-      name: 'player',
-      title: 'Players',
-      type: 'array',
-      of: [{type: 'reference', to: {type: 'player'}}],
-    }),
+    // defineField({
+    //   name: 'player',
+    //   title: 'Players',
+    //   type: 'array',
+    //   of: [{type: 'reference', to: {type: 'player'}}],
+    // }),
     defineField({
       name: 'mainImage',
       title: 'Main image',
@@ -45,9 +45,9 @@ export default defineType({
       type: 'datetime',
     }),
     defineField({
-      name: 'body',
-      title: 'Body',
-      type: 'blockContent',
+      name: 'notes',
+      title: 'Notes',
+      type: 'string',
     }),
   ],
 

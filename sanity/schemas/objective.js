@@ -20,5 +20,10 @@ export default defineType({
         title: 'ExpectedValue',
         type: 'number',
       }),
+    defineField({
+        name: 'expectedFrequency',
+        title: 'ExpectedFrequency',
+        type: 'number',
+      }),
   ],
 })

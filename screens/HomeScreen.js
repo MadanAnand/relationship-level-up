@@ -1,17 +1,36 @@
 import { useNavigation } from "@react-navigation/native";
-import { useLayoutEffect } from "react";
+import { useEffect, useLayoutEffect, useState } from "react";
 import { Image, ScrollView, Text, View } from "react-native";
 import { SafeAreaView } from "react-native";
 import RelationStages from "../components/RelationStages";
+import sanityClient from "../sanity";
 
 const HomeScreen = () => {
     const navigation = useNavigation();
+    const [realtionshipStages, setRealtionshipStages] = useState([])
 
  useLayoutEffect(() =>{
  navigation.setOptions({ 
     headerShown : false,
  });
- }, [])
+ }, []);
+
+ useEffect(()=> {
+    sanityClient.fetch(`
+    *[_type == "player" && name match "Sultan"]{
+        name,
+          image,
+          relationship[]->{
+            ...,
+            
+          }
+      }`).then (data =>{
+        setRealtionshipStages(data)
+      });
+ },[] );
+
+ console.log(realtionshipStages);
+
 return (
     <SafeAreaView className='bg-green-50'>
         {/**Header */}

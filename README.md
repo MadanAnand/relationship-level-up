@@ -20,6 +20,16 @@ expo start
 7. Sanity on a different folder. To start - Sanity Build, if you make changes, you need to redeploy to the backend.
 8. Installed npm i @sanity/client @sanity/image-url
 9. Run following to  add exception for localhost 19006, 3333 CORS. in cd of sanity folder. This is for allowing expo to access sanity. 'sanity cors add http://localhost:19006'
+10. Example usuage of GROQ for sanity -->
+    *[_type == "player" && name match "Sultan"]{
+  name,
+    image,
+    relationship[]->{
+      ...,
+      
+    }
+    }
+11. 
 
 
 ## Dev tools used for development

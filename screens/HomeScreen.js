@@ -3,7 +3,7 @@ import { useEffect, useLayoutEffect, useState } from "react";
 import { Image, ScrollView, Text, View } from "react-native";
 import { SafeAreaView } from "react-native";
 import RelationStages from "../components/RelationStages";
-import sanityClient from "../sanity";
+import client from "../sanity";
 
 const HomeScreen = () => {
     const navigation = useNavigation();
@@ -16,7 +16,7 @@ const HomeScreen = () => {
  }, []);
 
  useEffect(()=> {
-    sanityClient.fetch(`
+    client.fetch(`
     *[_type == "player" && name match "Sultan"]{
         name,
           image,

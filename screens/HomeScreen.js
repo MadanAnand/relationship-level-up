@@ -15,21 +15,21 @@ const HomeScreen = () => {
  });
  }, []);
 
- useEffect(()=> {
-    client.fetch(`
-    *[_type == "player" && name match "Sultan"]{
-        name,
-          image,
-          relationship[]->{
-            ...,
+//  useEffect(()=> {
+//     client.fetch(`
+//     *[_type == "player" && name match "Sultan"]{
+//         name,
+//           image,
+//           relationship[]->{
+//             ...,
             
-          }
-      }`).then (data =>{
-        setRealtionshipStages(data)
-      });
- },[] );
+//           }
+//       }`).then (data =>{
+//         setRealtionshipStages(data)
+//       });
+//  },[] );
 
- console.log(realtionshipStages);
+//  console.log(realtionshipStages);
 
 return (
     <SafeAreaView className='bg-green-50'>

@@ -29,6 +29,18 @@ export const client = createClient({
   .then((data) => console.log(`Number of documents fetched from Sanity.io: ${data}`))
   .catch(console.error)
 
+
+const query = '*[_type == "player"] {name}'
+const params = {name: "Sultan"}
+
+client.fetch(query, params).then((players) => {
+  console.log('name with sultan is')
+  players.forEach((player) => {
+    console.log(`${player.name}`)
+  })
+})
+
+
 // const data = await client.fetch<player>( `count(*)` )
 
 // console.write(`Number of documents: ${data}`)

@@ -5,6 +5,12 @@ A coach to help you level up in your relationships
 ## Run the App
 expo start 
 
+## Dev tools used for development
+1. VS Code 
+2. VS Code plugins :
+   1. ES7+ snippets - for auto complete of code Ex : rnfe  
+   2. 
+
 ## Key tech decisions 
 1. using tail wind css / nativewind new one
 2. installed navigation container for other things : 
@@ -29,11 +35,7 @@ expo start
       
     }
     }
-11. Struck at a random error . Error: URLSearchParams.set is not implemented
+11.  Struck at a random error . Error: URLSearchParams.set is not implemented
     Solved by npm add react-native-url-polyfill and adding 'import 'react-native-url-polyfill/auto';' in App.js
 
 
-## Dev tools used for development
-1. VS Code 
-2. VS Code plugins :
-   1. ES7+ snippets - for auto complete of code Ex : rnfe 

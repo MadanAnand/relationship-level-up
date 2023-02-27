@@ -1,20 +1,6 @@
-//import sanityClient from "@sanity/client";
+
 const {createClient} = require('@sanity/client')
-//import imageUrlBuilder from "@sanity/image-url";
-
-// export const client = sanityClient({
-// projectId :"mu0gql27",
-// dataset: "production",
-// useCdn : true,
-// apiVersion: "2022-01-12",
-// });
-
-// const builder = imageUrlBuilder(client);
-
-// export const urlFor =(source) => builder.image(source);
-
-
-// export default client;
+import imageUrlBuilder from '@sanity/image-url'
 
 export const client = createClient({
     projectId: 'mu0gql27',
@@ -24,14 +10,8 @@ export const client = createClient({
     // token: process.env.SANITY_SECRET_TOKEN // Only if you want to update content with the client
   })
   
-  client
-  .fetch(`count(*)`)
-  .then((data) => console.log(`Number of documents fetched from Sanity.io: ${data}`))
-  .catch(console.error)
-
-
-const query = '*[_type == "player"] {name}'
-const params = {name: "Sultan"}
+const query = '*[_type == "player" && name == $searchName] {name}'
+const params = {searchName: 'Sultan'}
 
 client.fetch(query, params).then((players) => {
   console.log('name with sultan is')
@@ -40,18 +20,40 @@ client.fetch(query, params).then((players) => {
   })
 })
 
+const builder = imageUrlBuilder(client)
 
-// const data = await client.fetch<player>( `count(*)` )
+export function urlFor(source) {
+  return builder.image(source)
+}
 
-// console.write(`Number of documents: ${data}`)
-  
-//   client
-//   .fetch(`count(*)`)
-//   .then((data) => console.log(`Number of documents: ${data}`))
-//   .catch(console.error)
+/**
+ * relationship stages fetch 
+ * const query = '*[_type == "relationshipStage"] {title}'
+ const params = {}
+ 
+ client.fetch(query, params).then((relationshipStages) => {
+   console.log('relationships stages are')
+   relationshipStages.forEach((relationshipStages) => {
+     console.log(`${relationshipStages.title}`)
+   })
+ }).catch(console.log('no relationship stages found'))
 
-// const builder = imageUrlBuilder(client)
+ */
+/**
+ * relationships fetch 
+ *  const query = '*[_type == "relationship" && title ==$relationshipName] {title}'
+ const params = {relationshipName: "Alladin / Orino Koflo"}
+ 
+ client.fetch(query, params).then((players) => {
+   console.log('relationship with sultan is')
+   players.forEach((player) => {
+     console.log(`${player.title}`)
+   })
+ }).catch(console.log('no rel found'))
+ */
 
-// function urlFor(source) {
-//   return builder.image(source)
-//}
+// this cient call can be used for quick check of all records
+// client
+// .fetch(`count(*)`)
+// .then((data) => console.log(`Number of documents fetched from Sanity.io: ${data}`))
+// .catch(console.error)

@@ -10,15 +10,7 @@ export const client = createClient({
     // token: process.env.SANITY_SECRET_TOKEN // Only if you want to update content with the client
   })
   
-const query = '*[_type == "player" && name == $searchName] {name}'
-const params = {searchName: 'Sultan'}
 
-client.fetch(query, params).then((players) => {
-  console.log('name with sultan is')
-  players.forEach((player) => {
-    console.log(`${player.name}`)
-  })
-})
 
 const builder = imageUrlBuilder(client)
 
@@ -37,7 +29,8 @@ export function urlFor(source) {
      console.log(`${relationshipStages.title}`)
    })
  }).catch(console.log('no relationship stages found'))
-
+ console.log(realtionshipStages[0].image);
+ console.log(urlFor(realtionshipStages[0].image).url());
  */
 /**
  * relationships fetch 
@@ -52,6 +45,20 @@ export function urlFor(source) {
  }).catch(console.log('no rel found'))
  */
 
+ /**
+  * Player fetch
+  * 
+  * 
+// const query = '*[_type == "player" && name == $searchName] {name}'
+// const params = {searchName: 'Sultan'}
+
+// client.fetch(query, params).then((players) => {
+//   console.log('name with sultan is')
+//   players.forEach((player) => {
+//     console.log(`${player.name}`)
+//   })
+// })
+  */
 // this cient call can be used for quick check of all records
 // client
 // .fetch(`count(*)`)

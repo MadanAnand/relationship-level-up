@@ -8,45 +8,27 @@ import {urlFor} from "../sanity";
 
 const HomeScreen = () => {
     const navigation = useNavigation();
-    const [realtionshipStages, setRealtionshipStages] = useState([])
-
+    const [relationStages, setRelationStages] = useState([])
  useLayoutEffect(() =>{
  navigation.setOptions({ 
     headerShown : false,
  });
  }, []);
 
- const query = '*[_type == "relationshipStage"]'
- const params = {}
- 
- client.fetch(query, params).then((relationshipStages) => {
-   console.log('relationships stages are')
-   relationshipStages.forEach((relationshipStages) => {
-     console.log(`${relationshipStages.title}`)
-   })
- }).catch(console.log('no relationship stages found'))
+useEffect(()=> {
+client.fetch(`
+*[_type == "relationshipStage" ]{
+    ...,
+    }`).then(data => {
+        setRelationStages(data)
+    })
+},[] );
 
- useEffect(()=> {
-    client.fetch(query, params).then(data =>{
-        setRealtionshipStages(data)
-      });
- },[] );
-
- console.log(realtionshipStages[0].image);
- console.log(urlFor(realtionshipStages[0].image).url());
-//  const relationstage=relationshipStages.first();
-//  console.log(relationstage.title)
 
 return (
     <SafeAreaView className='bg-green-50'>
         {/**Header */}
         <View className='flex-row pb-5 mx-2 px-4 space-x-3 items-center'>
-
-        <Image source={{
-            uri: urlFor(realtionshipStages[0].image).url()
-        }}
-        className='h-8 w-8 p-x-2'>
-        </Image>
 
         <Image source={{
             uri:'https://links.papareact.com/wru'

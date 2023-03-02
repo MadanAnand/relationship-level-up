@@ -3,6 +3,7 @@ import { useEffect, useLayoutEffect, useState } from "react";
 import { Image, ScrollView, Text, View } from "react-native";
 import { SafeAreaView } from "react-native";
 import RelationStages from "../components/RelationStages";
+import HowFarButton from "../components/HowFarButton"
 import { client } from "../sanity";
 import {urlFor} from "../sanity";
 
@@ -36,14 +37,19 @@ return (
         className='h-8 w-8 p-x-2 rounded-full'>
         </Image>
         <View className='flex-row'>
-            <Text className='text-xl'> Hey Dora!</Text>
+            <Text className='text-xl'> Hey Sultan!</Text>
         </View>
         </View>
         
         {/**body */}
-  
+
+
         <View className='bg-red-100' >
             <RelationStages />
+        </View>
+
+        <View className='bg-green-100' >
+            <HowFarButton />
         </View>
     </SafeAreaView>
 );

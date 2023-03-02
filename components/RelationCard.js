@@ -10,7 +10,7 @@ const RelationCard = ({imgUrl, title}) => {
         }}
         className='top-1 h-20 w-20'>
         </Image>
-        <Text className='relative bottom-0 left-4 text-black font-bold'> 
+        <Text className='relative bottom-0 left-2 text-black text-lg  font-bold'> 
         {title}
         </Text>
         </View>

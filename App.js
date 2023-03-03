@@ -5,6 +5,7 @@ import { StatusBar } from 'expo-status-bar';
 import 'react-native-url-polyfill/auto';
 import { TailwindProvider } from 'tailwindcss-react-native';
 import HomeScreen from './screens/HomeScreen';
+import ObjectivesScreen from './screens/ObjectivesScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -16,6 +17,7 @@ export default function App() {
       <Stack.Navigator>
         {/**screens */  }
         <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="ObjectivesScreen" component={ObjectivesScreen} />
       </Stack.Navigator>
       </TailwindProvider>
     </NavigationContainer>

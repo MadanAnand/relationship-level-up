@@ -1,10 +1,22 @@
 import { View, Text } from 'react-native'
 import React from 'react'
+import { useNavigation } from '@react-navigation/native'
 
 const ObjectivesScreen = () => {
+  const navigatation = useNavigation()
+  //To-Do slicer
+  const relationship = null
   return (
     <View>
-      <Text>ObjectivesScreen</Text>
+      <View>
+      <Text className="text-lg fong-bold text-center">
+        Objectives for 
+      </Text>
+      <Text className="text-lg fong-bold text-center">
+       {/* To-Do slicer
+       {relationStage.title} */}
+      </Text>
+      </View>
     </View>
   )
 }

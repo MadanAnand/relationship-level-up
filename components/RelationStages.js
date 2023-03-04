@@ -7,6 +7,9 @@ import {urlFor} from "../sanity";
 
 const RelationStages = () => {
   const [relationStages, setRelationStages] = useState([])
+  /**
+   * ToDo : Change below query to get the 
+   */
   useEffect(()=> {
     client.fetch(`
     *[_type == "relationshipStage" ] | order(_createdAt asc){

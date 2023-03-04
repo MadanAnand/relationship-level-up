@@ -17,7 +17,8 @@ export default function App() {
       <Stack.Navigator>
         {/**screens */  }
         <Stack.Screen name="Home" component={HomeScreen} />
-        <Stack.Screen name="ObjectivesScreen" component={ObjectivesScreen} />
+        <Stack.Screen name="ObjectivesScreen" component={ObjectivesScreen}
+                      options={{presentation : "modal", headerShown:"false"}}  />
       </Stack.Navigator>
       </TailwindProvider>
     </NavigationContainer>

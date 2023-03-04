@@ -40,6 +40,12 @@ export default defineType({
       of: [{type: 'reference', to: {type: 'relationshipStage'}}],
     }),
     defineField({
+      name: 'currentRelationshipStage',
+      title: 'CurrentRelationshipStage',
+      type: 'reference',
+      to: [{type: 'relationshipStage'}],
+    }),
+    defineField({
       name: 'realtionshipStartDate',
       title: 'Realtionship Start Date',
       type: 'datetime',

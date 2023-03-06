@@ -10,7 +10,7 @@ const ObjectivesScreen = () => {
     <View>
       <View>
       <Text className="text-lg fong-bold text-center">
-        Objectives for 
+        Objectives for reaching level
       </Text>
       <Text className="text-lg fong-bold text-center">
        {/* To-Do slicer

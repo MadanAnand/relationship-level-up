@@ -37,5 +37,7 @@ expo start
     }
 11.  Struck at a random error . Error: URLSearchParams.set is not implemented
     Solved by npm add react-native-url-polyfill and adding 'import 'react-native-url-polyfill/auto';' in App.js
+12. Redux - for state mgmt.
+    npm i react-redux @reduxjs/toolkit
 
 

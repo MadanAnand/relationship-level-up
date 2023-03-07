@@ -4,11 +4,22 @@ import RelationCard from './RelationCard'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { client } from "../sanity";
 import {urlFor} from "../sanity";
+import { useDispatch, useSelector } from 'react-redux';
+import { selectRelationship, addToRelationship } from '../features/relationshipSlice';
 
 const RelationStages = () => {
-  const [relationStages, setRelationStages] = useState([])
+  const [relationStages, setRelationStages] = useState([]);
+  const [isPressed, setIsPressed] = useState(false);
+  const relationStageSlices = useSelector(selectRelationship);
+  const dispatch = useDispatch();
+ 
+  const addStageToRelationship = () =>{
+    dispatch(addToRelationship({title, description, startDate,objectiveList}))
+  }
+  console.log(relationStageSlices)
+
   /**
-   * ToDo : Change below query to get the 
+   * ToDo : Change below query to get the actual relation from player. 
    */
   useEffect(()=> {
     client.fetch(`
@@ -23,20 +34,6 @@ const RelationStages = () => {
 
 
   return (
-    /** working Scroll View */
-    // <ScrollView 
-    // contentContainerStyle={{
-    //   paddingHorizontal:15,
-    //   paddingTop: 10, 
-    // }}
-    //  showsHorizontalScrollIndicator="{false}">
-    //   <RelationCard imgUrl="https://links.papareact.com/wru" title="Stage 1"/>
-    //   <RelationCard imgUrl="https://links.papareact.com/wru" title="Stage 2"/>
-    //   <RelationCard imgUrl="https://links.papareact.com/wru" title="Stage 3"/>
-    //   <RelationCard imgUrl="https://links.papareact.com/wru" title="Stage 1"/>
-    //   <RelationCard imgUrl="https://links.papareact.com/wru" title="Stage 2"/>
-    //   <RelationCard imgUrl="https://links.papareact.com/wru" title="Stage 3"/>
-    // </ScrollView>
   <View className='mx-5 my-5'>
 
     <View className='flex-row flex-wrap px-4 space-x-2 items-center '>
@@ -49,13 +46,6 @@ const RelationStages = () => {
     
       ) )}
       </View>
-
-      {/* Working hard coded views
-       <View className='flex-row pb-2 mx-2 px-4 space-x-2 items-center'>
-        <RelationCard imgUrl="https://links.papareact.com/wru" title="Stage 7"/>
-        <RelationCard imgUrl="https://links.papareact.com/wru" title="Stage 8"/>
-        <RelationCard imgUrl="https://links.papareact.com/wru" title="Stage 9"/>
-      </View> */}
     </View>
   )
 }

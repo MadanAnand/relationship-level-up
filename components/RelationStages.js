@@ -9,14 +9,6 @@ import { selectRelationship, addToRelationship } from '../features/relationshipS
 
 const RelationStages = () => {
   const [relationStages, setRelationStages] = useState([]);
-  const [isPressed, setIsPressed] = useState(false);
-  const relationStageSlices = useSelector(selectRelationship);
-  const dispatch = useDispatch();
- 
-  const addStageToRelationship = () =>{
-    dispatch(addToRelationship({title, description, startDate,objectiveList}))
-  }
-  console.log(relationStageSlices)
 
   /**
    * ToDo : Change below query to get the actual relation from player. 
@@ -30,7 +22,7 @@ const RelationStages = () => {
         })
     },[] );
     
-    console.log(relationStages)
+   //console.log(relationStages)
 
 
   return (

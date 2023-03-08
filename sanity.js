@@ -64,3 +64,12 @@ export function urlFor(source) {
 // .fetch(`count(*)`)
 // .then((data) => console.log(`Number of documents fetched from Sanity.io: ${data}`))
 // .catch(console.error)
+
+
+/**
+ * to get a title from reference array GROQ
+ * 
+ * *[_type == "relationship" && title =="Alladin / Orino Koflo"]{
+    relationshipStage[] -> {title}
+    }
+ */

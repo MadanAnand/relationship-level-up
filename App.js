@@ -15,8 +15,9 @@ export default function App() {
 
   return (
     <NavigationContainer>
-      <Provider store={store}>
+     
       <TailwindProvider>
+       
       <Stack.Navigator>
         {/**screens */  }
         <Stack.Screen name="Home" component={HomeScreen} />
@@ -24,7 +25,7 @@ export default function App() {
                       options={{presentation : "modal", headerShown:"false"}}  />
       </Stack.Navigator>
       </TailwindProvider>
-      </Provider>
+  
     </NavigationContainer>
   );
 }

@@ -6,6 +6,7 @@ const ObjectivesScreen = () => {
   const navigatation = useNavigation()
   //To-Do slicer
   const relationship = null
+
   return (
     <View>
       <View>

@@ -9,7 +9,16 @@ import {urlFor} from "../sanity";
 
 const HomeScreen = () => {
     const navigation = useNavigation();
-    const [relationStages, setRelationStages] = useState([])
+    const [relationship, setrelationship] = useState([])
+    // const [isPressed, setIsPressed] = useState(false);
+    // const relationStageSlices = useSelector(selectRelationship);
+    // const dispatch = useDispatch();
+   
+    // const addStageToRelationship = () =>{
+    //   dispatch(addToRelationship({title, description, startDate,objectiveList}))
+    // }
+    // console.log(relationStageSlices)
+
  useLayoutEffect(() =>{
  navigation.setOptions({ 
     headerShown : false,
@@ -18,19 +27,22 @@ const HomeScreen = () => {
 
 useEffect(()=> {
 client.fetch(`
-*[_type == "relationshipStage" ]{
-    ...,
+*[_type == "relationship" && title =="Alladin / Orino Koflo"]{
+    currentRelationshipStage -> {...,}
     }`).then(data => {
-        setRelationStages(data)
+        setrelationship(data)
     })
 },[] );
+//console.log(relationship)
 
+relationship?.map(relationship=> (
+    console.log('Fetching title of current rel '+relationship.currentRelationshipStage.title)
+))
 
 return (
     <SafeAreaView className='bg-green-50'>
         {/**Header */}
         <View className='flex-row pb-5 mx-2 px-4 space-x-3 items-center'>
-
         <Image source={{
             uri:'https://links.papareact.com/wru'
         }}
@@ -42,8 +54,6 @@ return (
         </View>
         
         {/**body */}
-
-
         <View className='bg-red-100' >
             <RelationStages />
         </View>

@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
-  relationship: [],
+  relationshipStage: [],
 }
 
 export const relationshipSlice = createSlice({
@@ -12,7 +12,7 @@ export const relationshipSlice = createSlice({
         /**
          * ToDo Change this logic to match slice required logic of update.
          */
-      state.relationship = [...state.relationship, action.relationship]
+      state.relationship = [...state.relationship, action.payload]
     },
     removeFromRelationship: (state, action) => {
       state.value -= 1
@@ -23,5 +23,5 @@ export const relationshipSlice = createSlice({
 // Action creators are generated for each case reducer function
 export const { addToRelationship, removeFromRelationship } = relationshipSlice.actions
 
-export const selectRelationship = (state) => relationshipSlice.relationship
+export const selectRelationshipStage = (state) => state.relationship.relationshipStage
 export default relationshipSlice.reducer

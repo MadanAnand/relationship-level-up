@@ -15,7 +15,10 @@ export const relationshipSlice = createSlice({
       state.relationship = [...state.relationship, action.payload]
     },
     removeFromRelationship: (state, action) => {
-      state.value -= 1
+        /**
+         * ToDo change logic to remove from basket
+         */ 
+     state.relationship = [...state.relationship, action.payload]
     },
   },
 })

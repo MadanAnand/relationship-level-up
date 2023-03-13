@@ -4,12 +4,15 @@ import { Image, ScrollView, Text, View } from "react-native";
 import { SafeAreaView } from "react-native";
 import RelationStages from "../components/RelationStages";
 import HowFarButton from "../components/HowFarButton"
+import HeaderBanner from "../components/HeaderBanner";
 import { client } from "../sanity";
 import {urlFor} from "../sanity";
 
 const HomeScreen = () => {
     const navigation = useNavigation();
-    const [relationship, setrelationship] = useState([])
+    const [relationship, setRelationship] = useState([])
+    const [player, setPlayer] = useState([])
+
     // const [isPressed, setIsPressed] = useState(false);
     // const relationStageSlices = useSelector(selectRelationship);
     // const dispatch = useDispatch();
@@ -26,11 +29,26 @@ const HomeScreen = () => {
  }, []);
 
 useEffect(()=> {
+const params = {searchName: 'Sultan'}
+
+client.fetch(`*[_type == "player" && name == $searchName]{
+    name,
+    relationship[] -> {title}
+ }`
+, params).then((player) => {
+    setPlayer(player)
+})
+
+player?.map(player=> (
+    console.log('Fetching name of current player '+ player.name),
+    player?.relationship?.map(relation => console.log(relation.title))
+))
+
 client.fetch(`
 *[_type == "relationship" && title =="Alladin / Orino Koflo"]{
     currentRelationshipStage -> {...,}
     }`).then(data => {
-        setrelationship(data)
+        setRelationship(data)
     })
 },[] );
 //console.log(relationship)
@@ -54,11 +72,16 @@ return (
         </View>
         
         {/**body */}
-        <View className='bg-red-100' >
+
+        <View  >
+            <HeaderBanner title={'placeholder'}/>
+        </View>
+
+        <View  >
             <RelationStages />
         </View>
 
-        <View className='bg-green-100' >
+        <View >
             <HowFarButton />
         </View>
     </SafeAreaView>

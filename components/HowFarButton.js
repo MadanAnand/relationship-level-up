@@ -5,7 +5,7 @@ import { useNavigation } from '@react-navigation/native'
 const HowFarButton = () => {
     const navigation = useNavigation();
   return (
-    <View className="absolute bottom py-10 w-full z-50">
+    <View className=" py-10 w-full z-50">
         <TouchableOpacity className="mx-5 py-10 bg-[#00CCBB]"
                           onPress={()=> navigation.navigate("ObjectivesScreen",{}) }>
 

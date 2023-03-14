@@ -26,6 +26,8 @@ expo start
 7. Sanity on a different folder. To start - Sanity Build, if you make changes, you need to redeploy to the backend.
 8. Installed npm i @sanity/client @sanity/image-url
 9. Run following to  add exception for localhost 19006, 3333 CORS. in cd of sanity folder. This is for allowing expo to access sanity. 'sanity cors add http://localhost:19006'
+    To update and publish the changes you made in local. 
+    npx sanity deploy
 10. Example usuage of GROQ for sanity -->
     *[_type == "player" && name match "Sultan"]{
   name,
@@ -35,9 +37,9 @@ expo start
       
     }
     }
-11.  Struck at a random error . Error: URLSearchParams.set is not implemented
+1.   Struck at a random error . Error: URLSearchParams.set is not implemented
     Solved by npm add react-native-url-polyfill and adding 'import 'react-native-url-polyfill/auto';' in App.js
-12. Redux - for state mgmt.
+2.  Redux - for state mgmt.
     npm i react-redux @reduxjs/toolkit
 
 

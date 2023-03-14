@@ -12,6 +12,7 @@ const HomeScreen = () => {
     const navigation = useNavigation();
     const [relationship, setRelationship] = useState([])
     const [player, setPlayer] = useState([])
+    const [currentRelation, setCurrentRelation] = useState([])
 
     // const [isPressed, setIsPressed] = useState(false);
     // const relationStageSlices = useSelector(selectRelationship);
@@ -33,25 +34,29 @@ const params = {searchName: 'Sultan'}
 
 client.fetch(`*[_type == "player" && name == $searchName]{
     name,
-    relationship[] -> {title}
+    relationship[] -> {...,}
  }`
 , params).then((player) => {
-    setPlayer(player)
+    player?.map(player=> (
+        console.log('Fetching name of current player '+ player.name),
+        //player?.relationship?.map(relation => console.log(relation.title)),
+        setCurrentRelation(player.relationship),
+        setPlayer(player)
+    ))
+    
 })
 
-player?.map(player=> (
-    console.log('Fetching name of current player '+ player.name),
-    player?.relationship?.map(relation => console.log(relation.title))
-))
-
-client.fetch(`
-*[_type == "relationship" && title =="Alladin / Orino Koflo"]{
-    currentRelationshipStage -> {...,}
-    }`).then(data => {
-        setRelationship(data)
-    })
+// client.fetch(`
+// *[_type == "relationship" && title =="Alladin / Orino Koflo"]{
+//     currentRelationshipStage -> {...,}
+//     }`).then(data => {
+//         setRelationship(data)
+//     })
 },[] );
-//console.log(relationship)
+
+//currentRelation.map(relationTitle => console.log(relationTitle.title))
+//console.log(currentRelation)
+console.log(player)
 
 relationship?.map(relationship=> (
     console.log('Fetching title of current rel '+relationship.currentRelationshipStage.title)
@@ -67,14 +72,15 @@ return (
         className='h-8 w-8 p-x-2 rounded-full'>
         </Image>
         <View className='flex-row'>
-            <Text className='text-xl'> Hey Sultan!</Text>
+            <Text className='text-xl'> Hey {player.name}</Text>
         </View>
         </View>
         
         {/**body */}
 
         <View  >
-            <HeaderBanner title={'placeholder'}/>
+            <HeaderBanner title={player?.relationship?.map(relation => (relation.title))}
+                          level={'level'}/>
         </View>
 
         <View  >

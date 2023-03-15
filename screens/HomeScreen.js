@@ -10,7 +10,6 @@ import {urlFor} from "../sanity";
 
 const HomeScreen = () => {
     const navigation = useNavigation();
-    const [relationship, setRelationship] = useState([])
     const [player, setPlayer] = useState([])
     const [currentRelation, setCurrentRelation] = useState([])
 
@@ -30,11 +29,12 @@ const HomeScreen = () => {
  }, []);
 
 useEffect(()=> {
-const params = {searchName: 'Sultan'}
+const params = {searchName: 'Sultan'};
 
 client.fetch(`*[_type == "player" && name == $searchName]{
     name,
-    relationship[] -> {...,}
+    relationship[] -> 
+      {...,relationshipStage[] -> {...,} }
  }`
 , params).then((player) => {
     player?.map(player=> (
@@ -42,9 +42,13 @@ client.fetch(`*[_type == "player" && name == $searchName]{
         //player?.relationship?.map(relation => console.log(relation.title)),
         setCurrentRelation(player.relationship),
         setPlayer(player)
-    ))
-    
-})
+    ))    
+});
+
+currentRelation?.map(currentRelation => {
+    console.log('Fetching title of current rel '+ currentRelation.currentRelationshipStage.title)
+});
+
 
 // client.fetch(`
 // *[_type == "relationship" && title =="Alladin / Orino Koflo"]{
@@ -56,11 +60,9 @@ client.fetch(`*[_type == "player" && name == $searchName]{
 
 //currentRelation.map(relationTitle => console.log(relationTitle.title))
 //console.log(currentRelation)
-console.log(player)
+//console.log(player)
 
-relationship?.map(relationship=> (
-    console.log('Fetching title of current rel '+relationship.currentRelationshipStage.title)
-))
+
 
 return (
     <SafeAreaView className='bg-green-50'>

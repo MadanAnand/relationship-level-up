@@ -33,6 +33,7 @@ const RelationStages = () => {
        <RelationCard 
       imgUrl={urlFor(relationStage?.image).url()}
       title = {relationStage?.title}
+      isCurrentRelation = {true}
       key={relationStage._id}
       />
     

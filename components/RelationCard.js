@@ -2,10 +2,13 @@ import { View, Text, ScrollView, TouchableOpacity, Image } from 'react-native'
 import React from 'react'
 import { useNavigation } from '@react-navigation/native'
 
-const RelationCard = ({imgUrl, title}) => {
+const RelationCard = ({imgUrl, title, isCurrentRelation}) => {
   const navigation = useNavigation();
+ 
   return (
-    <TouchableOpacity className='relative mr-2 px-2 shadow'
+    <TouchableOpacity 
+    className={"relative mr-2 px-2 shadow "  +
+    (isCurrentRelation ? 'bg-[#a3cc99]' : 'bg-[#cc3600]')}
     onPress={()=> navigation.navigate("ObjectivesScreen",{title})}>
       <View >
         <Image source={{

@@ -1,7 +1,7 @@
 import { useNavigation } from "@react-navigation/native";
 import { useEffect, useLayoutEffect, useState } from "react";
 import { Image, ScrollView, Text, View } from "react-native";
-import { SafeAreaView } from "react-native";
+import { SafeAreaView, ImageBackground } from "react-native";
 import RelationStages from "../components/RelationStages";
 import HowFarButton from "../components/HowFarButton"
 import HeaderBanner from "../components/HeaderBanner";
@@ -65,7 +65,9 @@ currentRelation?.map(currentRelation => {
 
 
 return (
-    <SafeAreaView className='bg-green-50'>
+    <ImageBackground source={require('../images/leafyBackground.png')} style={{width: '100%', height: '100%'}}>
+    <SafeAreaView className='opacity: 0'>
+        
         {/**Header */}
         <View className='flex-row pb-5 mx-2 px-4 space-x-3 items-center'>
         <Image source={{
@@ -92,7 +94,9 @@ return (
         <View >
             <HowFarButton />
         </View>
+        
     </SafeAreaView>
+    </ImageBackground>
 );
 }
 

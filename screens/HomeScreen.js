@@ -76,7 +76,7 @@ return (
         className='h-8 w-8 p-x-2 rounded-full'>
         </Image>
         <View className='flex-row'>
-            <Text className='text-xl'> Hey {player.name}</Text>
+            <Text className='text-xl text-white'> Hey {player.name}</Text>
         </View>
         </View>
         

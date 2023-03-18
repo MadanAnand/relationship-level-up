@@ -1,4 +1,4 @@
-import { View, Text } from 'react-native'
+import { View, Text,ImageBackground } from 'react-native'
 import React from 'react'
 import { useNavigation, useRoute } from '@react-navigation/native'
 
@@ -14,14 +14,14 @@ const ObjectivesScreen = () => {
 
   return (
     <View>
-      <View>
-      <Text className="text-lg fong-bold text-center">
+   <ImageBackground source={require('../images/leafyBackground.png')} style={{width: '100%', height: '100%'}}>
+      <Text className="text-xl text-white fong-bold text-center">
         Objectives for reaching level
       </Text>
-      <Text className="text-lg fong-bold text-center">
+      <Text className="text-xl text-white fong-bold text-center">
        {title}
       </Text>
-      </View>
+      </ImageBackground>
     </View>
   )
 }

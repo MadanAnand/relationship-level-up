@@ -73,7 +73,7 @@ return (
         <Image source={{
             uri:'https://links.papareact.com/wru'
         }}
-        className='h-8 w-8 p-x-2 rounded-full'>
+        className='h-8 w-8 p-x-2 bg-[#00CCBB] rounded-full'>
         </Image>
         <View className='flex-row'>
             <Text className='text-xl text-white'> Hey {player.name}</Text>

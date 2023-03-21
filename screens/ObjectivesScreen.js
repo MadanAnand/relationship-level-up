@@ -1,12 +1,13 @@
-import { View, Text,ImageBackground } from 'react-native'
+import { View, Text,ImageBackground,TouchableOpacity } from 'react-native'
 import React from 'react'
-import {  useNavigation, useRoute } from '@react-navigation/native'
+import {  useNavigation, useRoute } from '@react-navigation/native';
 import { useEffect, useLayoutEffect, useState } from "react";
 import { client } from "../sanity";
-
+import {XCircleIcon} from "react-native-heroicons/outline"
 const ObjectivesScreen = () => {
-  const navigatation = useNavigation()
+  const navigation = useNavigation()
   const [currentRelation, setCurrentRelation] = useState([])
+
 
   //To-Do slicer
   const relationship = null
@@ -14,12 +15,18 @@ const ObjectivesScreen = () => {
   //Route
   const {params:{
     title,
-  }} =useRoute();
+  }} = useRoute();
+
+  // useLayoutEffect(() =>{
+  //   navigation.setOptions({ 
+  //      headerShown : false,
+  //   });
+  //   }, []);
 
   useEffect(()=> {
-    const params = {searchName: 'Stage 1'};
+    const params = {searchTitle: 'Stage 1'};
     
-    client.fetch(`*[_type == "relationshipStage" && title == $searchName]{
+    client.fetch(`*[_type == "relationshipStage" && title == $searchTitle]{
       title,
         objective[] -> 
         {...,} 
@@ -27,16 +34,16 @@ const ObjectivesScreen = () => {
     , params).then((relation) => {
         relation?.map(relation=> (
             console.log('Fetching name of current relationstage '+ relation.title),
-            //player?.relationship?.map(relation => console.log(relation.title)),
-      
-            setCurrentRelation(relation.objective)
+            //setCurrentObjective(relation.objective),
+            setCurrentRelation(relation)
         ))    
     });  
     
+    console.log('Objectives are '+ currentRelation.title);
+    // currentObjective?.map(currentObjective => {
+    //   console.log('Objectives are '+ currentObjective.objective.name)
+    // });
 
-    currentRelation?.map(objective => {
-      console.log('`Objectives are ` '+ objective)
-    });
     },[] );
     
   return (
@@ -48,6 +55,10 @@ const ObjectivesScreen = () => {
       <Text className="text-xl text-white fong-bold text-center">
        {title}
       </Text>
+      <TouchableOpacity className="items-center "
+            onPress={()=> navigation.navigate("Home",{}) } >
+        <XCircleIcon size ={40} color={"white"}  />
+      </TouchableOpacity>
       </ImageBackground>
     </View>
   )

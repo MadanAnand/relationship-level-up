@@ -1,13 +1,11 @@
 import { View, Text,ImageBackground,TouchableOpacity } from 'react-native'
-import React from 'react'
 import {  useNavigation, useRoute } from '@react-navigation/native';
-import { useEffect, useLayoutEffect, useState } from "react";
+import{React,useEffect, useState } from "react";
 import { client } from "../sanity";
 import {XCircleIcon} from "react-native-heroicons/outline"
 const ObjectivesScreen = () => {
   const navigation = useNavigation()
-  const [currentRelation, setCurrentRelation] = useState([])
-
+  const [stageObjective, setStageObjective] = useState([])
 
   //To-Do slicer
   const relationship = null
@@ -17,35 +15,24 @@ const ObjectivesScreen = () => {
     title,
   }} = useRoute();
 
-  // useLayoutEffect(() =>{
-  //   navigation.setOptions({ 
-  //      headerShown : false,
-  //   });
-  //   }, []);
 
   useEffect(()=> {
-    const params = {searchTitle: 'Stage 1'};
-    
+  const params = {searchTitle: title};
     client.fetch(`*[_type == "relationshipStage" && title == $searchTitle]{
-      title,
         objective[] -> 
         {...,} 
       }`
     , params).then((relation) => {
         relation?.map(relation=> (
-            console.log('Fetching name of current relationstage '+ relation.title),
-            //setCurrentObjective(relation.objective),
-            setCurrentRelation(relation)
+            setStageObjective(relation.objective)
         ))    
     });  
-    
-    console.log('Objectives are '+ currentRelation.title);
-    // currentObjective?.map(currentObjective => {
-    //   console.log('Objectives are '+ currentObjective.objective.name)
-    // });
 
     },[] );
-    
+    //console.log(stageObjective);
+    stageObjective?.map(objective=>{
+      console.log(objective.name);
+    })
   return (
     <View>
    <ImageBackground source={require('../images/leafyBackground.png')} style={{width: '100%', height: '100%'}}>

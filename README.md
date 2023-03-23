@@ -37,9 +37,10 @@ expo start
       
     }
     }
-1.   Struck at a random error . Error: URLSearchParams.set is not implemented
+11.   Struck at a random error . Error: URLSearchParams.set is not implemented
     Solved by npm add react-native-url-polyfill and adding 'import 'react-native-url-polyfill/auto';' in App.js
-2.  Redux - for state mgmt.
+12.  Redux - for state mgmt.
     npm i react-redux @reduxjs/toolkit
-
+13. Using progress bar for react : https://www.npmjs.com/package/react-native-progress
+    npm install react-native-progress --save
 

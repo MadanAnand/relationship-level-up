@@ -33,22 +33,16 @@ const ObjectiveCards = ({title}) => {
      </Text>
      <View>
         {       
-           stageObjective?.map(objective=>{
-            console.log(objective._id);
-            <ObjectiveCard />
-          })}
-
-        {/* {  stageObjective?.map(obj=>{
-            //console.log(objective._id);
-                    <ObjectiveCard
-                    name = {obj.name}
-                    currentValue = {obj.currentValue}
-                    expectedValue = {obj.expectedValue}
-                    frequency = {obj.frequency}
-                    key={obj._id}
-                    />
-          })
-        } */}
+           stageObjective?.map(obj=>(
+            <ObjectiveCard
+            name = {obj.name}
+            currentValue = {obj.currentValue}
+            expectedValue = {obj.expectedValue}
+            frequency = {obj.frequency}
+            key={obj._id}
+            />
+          ))
+          }
      </View>
      </View>
     </View>

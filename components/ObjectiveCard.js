@@ -3,7 +3,6 @@ import React from 'react'
 import * as Progress from 'react-native-progress';
 
 const ObjectiveCard = ({name,currentValue,expectedValue,frequency}) => {
-   console.log("name is " + name)
   return (
     <View className="py-4">
         <View className ="flex-row px-10">

@@ -15,7 +15,7 @@ const ObjectiveCards = ({title}) => {
             }`
           , params).then((relation) => {
               relation?.map(relation=> (
-                  setStageObjective(relation.objective)
+                  setStageObjective(relation?.objective)
               ))    
           });  
       
@@ -35,11 +35,11 @@ const ObjectiveCards = ({title}) => {
         {       
            stageObjective?.map(obj=>(
             <ObjectiveCard
-            name = {obj.name}
-            currentValue = {obj.currentValue}
-            expectedValue = {obj.expectedValue}
-            frequency = {obj.frequency}
-            key={obj._id}
+            name = {obj?.name}
+            currentValue = {obj?.currentValue}
+            expectedValue = {obj?.expectedValue}
+            frequency = {obj?.frequency}
+            key={obj?._id}
             />
           ))
           }

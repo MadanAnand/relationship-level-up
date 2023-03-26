@@ -34,7 +34,7 @@ const RelationStages = () => {
       imgUrl={urlFor(relationStage?.image).url()}
       title = {relationStage?.title}
       isCurrentRelation = {true}
-      key={relationStage._id}
+      key={relationStage?._id}
       />
     
       ) )}

@@ -5,11 +5,11 @@ import * as Progress from 'react-native-progress';
 const ObjectiveCard = ({name,currentValue,expectedValue,frequency}) => {
   return (
     <View className="py-4">
-        <View className ="flex-row px-10">
-        <View className ="align-left px-1">
+        <View className ="">
+        <View className ="items-start px-11">
         <Text className="text-white text-lg" > {name}</Text>
-        </View>
-        <View className ="align-right">
+        </View>        
+        <View className ="items-end px-11">
         <Text className="text-white text-lg" > {currentValue} / {expectedValue} {frequency}</Text>
         </View>
         </View>

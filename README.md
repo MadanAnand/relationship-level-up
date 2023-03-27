@@ -43,4 +43,6 @@ expo start
     npm i react-redux @reduxjs/toolkit
 13. Using progress bar for react : https://www.npmjs.com/package/react-native-progress
     npm install react-native-progress --save
+14. added slider : https://github.com/callstack/react-native-slider
+    npm install @react-native-community/slider --save
 

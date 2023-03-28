@@ -1,7 +1,7 @@
 import { View, Text, ScrollView } from 'react-native'
 import {useEffect,useState,React} from 'react'
 import RelationCard from './RelationCard'
-import { SafeAreaView } from 'react-native-safe-area-context'
+
 import { client } from "../sanity";
 import {urlFor} from "../sanity";
 import { useDispatch, useSelector } from 'react-redux';
@@ -26,6 +26,7 @@ const RelationStages = () => {
 
 
   return (
+
   <View className='mx-5 my-5'>
 
     <View className='flex-row flex-wrap px-4 space-x-2 items-center '>
@@ -40,6 +41,7 @@ const RelationStages = () => {
       ) )}
       </View>
     </View>
+
   )
 }
 

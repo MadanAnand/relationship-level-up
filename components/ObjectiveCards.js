@@ -1,7 +1,8 @@
-import { View, Text } from 'react-native'
+import { View, Text , ScrollView} from 'react-native'
 import{React,useEffect, useState } from "react";
 import ObjectiveCard from './ObjectiveCard'
 import { client } from "../sanity";
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 const ObjectiveCards = ({title}) => {
 
@@ -25,11 +26,14 @@ const ObjectiveCards = ({title}) => {
         //     console.log(objective.name);
         //   });
   return (
+    <SafeAreaView>
+    <ScrollView>
     <View className="py-5 w-full" >
      <View className="mx-5 py-5 bg-[#00CCBB]">
       
       <Text className="text-white text-lg text-center font-extrabold">
-         05 / 10 Completed
+        {/* ToDo : add the count */}
+         To be Completed
      </Text>
      <View>
         {       
@@ -46,6 +50,8 @@ const ObjectiveCards = ({title}) => {
      </View>
      </View>
     </View>
+    </ScrollView>
+    </SafeAreaView>
   )
 }
 

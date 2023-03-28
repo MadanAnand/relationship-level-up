@@ -29,7 +29,7 @@ const ObjectivesScreen = () => {
         <ObjectiveCards
         title={title}/>
       </View>
-      <TouchableOpacity className="items-center "
+      <TouchableOpacity className="absolute bottom-10 text-center"
             onPress={()=> navigation.navigate("Home",{}) } >
         <XCircleIcon size ={40} color={"white"}  />
       </TouchableOpacity>

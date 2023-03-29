@@ -19,7 +19,7 @@ const ObjectivesScreen = () => {
   return (
     <View>
    <ImageBackground source={require('../images/leafyBackground.png')} style={{width: '100%', height: '100%'}}>
-      <Text className="text-xl text-white font-bold text-center">
+      <Text className="text-xl text-white py-5 font-bold text-center">
         Objectives for reaching level
       </Text>
       <Text className="text-xl text-white font-bold text-center">
@@ -29,9 +29,10 @@ const ObjectivesScreen = () => {
         <ObjectiveCards
         title={title}/>
       </View>
-      <TouchableOpacity className="absolute bottom-10 text-center"
+      <TouchableOpacity style={{position: 'absolute', left: 0, right: 0, bottom: 20, justifyContent: 'center', alignItems: 'center'}} 
+      //className="absolute bottom-10 "
             onPress={()=> navigation.navigate("Home",{}) } >
-        <XCircleIcon size ={40} color={"white"}  />
+        <XCircleIcon size ={40} color={"white"}   />
       </TouchableOpacity>
       </ImageBackground>
     </View>

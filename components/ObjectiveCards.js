@@ -27,6 +27,7 @@ const ObjectiveCards = ({title}) => {
         //   });
   return (
     <SafeAreaView>
+    <View style={{height: 550}} >
     <ScrollView>
     <View className="py-5 w-full" >
      <View className="mx-5 py-5 bg-[#00CCBB]">
@@ -51,6 +52,7 @@ const ObjectiveCards = ({title}) => {
      </View>
     </View>
     </ScrollView>
+    </View>
     </SafeAreaView>
   )
 }

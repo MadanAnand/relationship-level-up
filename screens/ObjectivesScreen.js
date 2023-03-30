@@ -17,8 +17,9 @@ const ObjectivesScreen = () => {
   }} = useRoute();
 
   return (
-    <View>
+    
    <ImageBackground source={require('../images/leafyBackground.png')} style={{width: '100%', height: '100%'}}>
+     <View>
       <Text className="text-xl text-white py-5 font-bold text-center">
         Objectives for reaching level
       </Text>
@@ -34,8 +35,8 @@ const ObjectivesScreen = () => {
             onPress={()=> navigation.navigate("Home",{}) } >
         <XCircleIcon size ={40} color={"white"}   />
       </TouchableOpacity>
+      </View>
       </ImageBackground>
-    </View>
   )
 }
 

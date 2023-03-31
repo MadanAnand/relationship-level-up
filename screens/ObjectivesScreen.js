@@ -30,11 +30,23 @@ const ObjectivesScreen = () => {
         <ObjectiveCards
         title={title}/>
       </View>
-      <TouchableOpacity style={{position: 'absolute', left: 0, right: 0, bottom: 20, justifyContent: 'center', alignItems: 'center'}} 
+
+      <View style={{position: 'absolute', left: 0, right: 0, bottom: 20, justifyContent: 'center', alignItems: 'center'}} >
+      <TouchableOpacity 
       //className="absolute bottom-10 "
             onPress={()=> navigation.navigate("Home",{}) } >
         <XCircleIcon size ={40} color={"white"}   />
       </TouchableOpacity>
+      </View>
+
+      {/* <View style={{position: 'absolute', left: 0, right: 0, bottom: 20, justifyContent: 'center', alignItems: 'center'}} >
+      <TouchableOpacity 
+      //className="absolute bottom-10 "
+            onPress={()=> navigation.navigate("Home",{}) } >
+        <XCircleIcon size ={40} color={"white"}   />
+      </TouchableOpacity>
+      </View> */}
+      
       </View>
       </ImageBackground>
   )

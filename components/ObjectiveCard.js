@@ -6,7 +6,6 @@ import Slider from '@react-native-community/slider';
 const ObjectiveCard = ({name,currentValue,expectedValue,frequency}) => {
   return (
     <View className="py-4">
-
         <View className =" px-11 flex-row">
         <View className ="">
         <Text className="text-white text-lg" > {name}</Text>

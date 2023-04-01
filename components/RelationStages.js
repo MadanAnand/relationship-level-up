@@ -29,7 +29,7 @@ const RelationStages = () => {
 
   <View className='mx-5 my-5'>
 
-    <View className='flex-row flex-wrap px-4 space-x-2 items-center '>
+    <View className='flex-row flex-wrap px-5 space-x-2 items-center '>
     {relationStages?.map(relationStage=>(
        <RelationCard 
       imgUrl={urlFor(relationStage?.image).url()}

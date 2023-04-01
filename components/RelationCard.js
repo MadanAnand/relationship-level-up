@@ -7,7 +7,7 @@ const RelationCard = ({imgUrl, title, isCurrentRelation}) => {
  
   return (
     <TouchableOpacity 
-    className={"relative mr-2 px-2 shadow "  +
+    className={"relative mr-5 px-2 shadow "  +
     (isCurrentRelation ? 'bg-[#a3cc99]' : 'bg-[#cc3600]')}
     onPress={()=> navigation.navigate("ObjectivesScreen",{title})}>
       <View >

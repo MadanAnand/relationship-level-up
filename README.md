@@ -46,3 +46,4 @@ expo start
 14. added slider : https://github.com/callstack/react-native-slider
     npm install @react-native-community/slider --save
 
+15. bottom tabs : npm install @react-navigation/bottom-tabs

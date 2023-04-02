@@ -20,19 +20,19 @@ export default function App() {
     <NavigationContainer>
      
       <TailwindProvider>
-      {/* <Stack.Navigator>
+      <Stack.Navigator>
        
         <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen name="ObjectivesScreen" component={ObjectivesScreen}
                       options={{presentation : "modal", headerShown:"false"}}  />
-      </Stack.Navigator> */}
+      </Stack.Navigator>
 
 
-      <Tab.Navigator>
+      {/* <Tab.Navigator>
       <Tab.Screen name="Home" component={HomeScreen} />
       <Tab.Screen name="ObjectivesScreen" component={ObjectivesScreen} 
             options={{headerShown:"false"}}/>
-      </Tab.Navigator>
+      </Tab.Navigator> */}
     
 
       </TailwindProvider>

@@ -27,10 +27,10 @@ const ObjectiveCards = ({title}) => {
         //   });
   return (
     <SafeAreaView>
-    <View style={{height: 550}} >
+    <View style={{height: 400}} >
     <ScrollView>
-    <View className="py-5 w-full" >
-     <View className="mx-5 py-5 bg-[#00CCBB]">
+    <View className="py-1 w-full" >
+     <View className="mx-5 py-2 bg-[#00CCBB]">
       
       <Text className="text-white text-lg text-center font-extrabold">
         {/* ToDo : add the count */}

@@ -1,7 +1,7 @@
-import { View, Text,ImageBackground,TouchableOpacity } from 'react-native'
+import { View, Text, SafeAreaView, ImageBackground,TouchableOpacity } from 'react-native'
 import {  useNavigation, useRoute } from '@react-navigation/native';
 import { useEffect, useLayoutEffect, useState } from "react";
-
+import HowFarButton from "../components/HowFarButton"
 import {XCircleIcon} from "react-native-heroicons/outline";
 import ObjectiveCards from '../components/ObjectiveCards';
 
@@ -25,7 +25,7 @@ const ObjectivesScreen = () => {
   return (
     
    <ImageBackground source={require('../images/leafyBackground.png')} style={{width: '100%', height: '100%'}}>
-     <View>
+     <SafeAreaView className='opacity: 0'>
 
       <View className="py-10">
       <Text className="text-xl text-white py-5 font-bold text-center">
@@ -40,15 +40,24 @@ const ObjectivesScreen = () => {
       </View>
       </View>
 
-      <View style={{position: 'absolute', left: 0, right: 0, bottom: 20, justifyContent: 'center', alignItems: 'center'}} >
+
+      <View style={{position: 'absolute', left: 0, right: 0, bottom: 5, justifyContent: 'center', alignItems: 'center'}} >
       <TouchableOpacity 
-      //className="absolute bottom-10 "
             onPress={()=> navigation.navigate("Home",{}) } >
-        <XCircleIcon size ={40} color={"white"}   />
+        {/* <XCircleIcon size ={40} color={"white"}   /> */}
       </TouchableOpacity>
       </View>
       
+
+      <View  >
+      <TouchableOpacity 
+            onPress={()=> navigation.navigate("Home",{}) } >
+       
+        <HowFarButton/>
+      </TouchableOpacity>
       </View>
+    
+      </SafeAreaView>
       </ImageBackground>
   )
 }

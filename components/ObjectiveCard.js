@@ -6,8 +6,8 @@ import Slider from '@react-native-community/slider';
 const ObjectiveCard = ({name,currentValue,expectedValue,frequency}) => {
   return (
     <View className="py-4">
-        <View className =" px-11 flex-row">
-        <View className ="">
+        <View style={{flexDirection:'row',  justifyContent:'space-between'}} >
+        <View className ="px-5">
         <Text className="text-white text-lg" > {name}</Text>
         </View>        
         <View className ="px-5">
@@ -17,7 +17,7 @@ const ObjectiveCard = ({name,currentValue,expectedValue,frequency}) => {
         <View className="px-11 mx-auto flex-row">
         {/* <Progress.Bar progress={0.3} width={250} height={15}  borderColor={"white"} borderRadius={1} borderWidth={2} color={"white"}/> */}
         <Slider
-        style={{width: 250, height: 40}}
+        style={{width: 300, height: 40}}
         minimumValue={0}
         maximumValue={expectedValue}
         value={currentValue}

@@ -13,10 +13,17 @@ const HowFarButton = () => {
       {/* <Text className="text-white text-lg text-center font-extrabold">
         How Far Is My Next Level?
      </Text> */}
-     <View style={{position: 'absolute', left: 0, right: 0, bottom: 0, justifyContent: 'center', alignItems: 'center'}}>
+     {/* <View style={{position: 'absolute', left: 0, right: 0, bottom: 0, justifyContent: 'center', alignItems: 'center'}}>
        <XCircleIcon size ={40} color={"white"}   />
        <XCircleIcon size ={40} color={"white"}   />
-     </View>
+     </View> */}
+
+      <View
+     style={{flexDirection:'row',  justifyContent:'space-around'}} >
+      <XCircleIcon size ={40} color={"red"} />
+      <XCircleIcon size ={40} color={"white"} />
+      <XCircleIcon size ={40} color={"green"} />
+    </View>
 
       </View>
     </View>

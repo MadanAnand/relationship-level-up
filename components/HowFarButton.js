@@ -22,7 +22,7 @@ const HowFarButton = () => {
      style={{flexDirection:'row',  justifyContent:'space-around'}} >
       <XCircleIcon size ={40} color={"red"} />
       <XCircleIcon size ={40} color={"white"} />
-      <XCircleIcon size ={40} color={"green"} />
+      <XCircleIcon size ={40} color={"blue"} />
     </View>
 
       </View>

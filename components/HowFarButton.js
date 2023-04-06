@@ -1,7 +1,7 @@
 import { View, Text, TouchableOpacity } from 'react-native'
 import React from 'react'
 import { useNavigation } from '@react-navigation/native'
-import {XCircleIcon} from "react-native-heroicons/outline";
+import {XCircleIcon,HomeIcon, PencilSquareIcon} from "react-native-heroicons/outline";
 const HowFarButton = () => {
     const navigation = useNavigation();
   return (
@@ -20,9 +20,9 @@ const HowFarButton = () => {
 
       <View
      style={{flexDirection:'row',  justifyContent:'space-around'}} >
-      <XCircleIcon size ={40} color={"red"} />
+      <HomeIcon size ={40} color={"white"} />
       <XCircleIcon size ={40} color={"white"} />
-      <XCircleIcon size ={40} color={"blue"} />
+      <PencilSquareIcon size ={40} color={"white"} />
     </View>
 
       </View>

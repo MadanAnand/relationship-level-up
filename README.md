@@ -47,3 +47,4 @@ expo start
     npm install @react-native-community/slider --save
 
 15. bottom tabs : npm install @react-navigation/bottom-tabs
+16. Reading now on Sanity update operation : https://www.sanity.io/docs/transactions

@@ -46,6 +46,8 @@ client.fetch(`*[_type == "player" && name == $searchName]{
 });
 
 currentRelation?.map(currentRelation => {
+    // attempt at patch opeation ! 
+    //client.patch(currentRelation.currentRelationshipStage._id).set({title: 'Untitled relation'}).commit()
     console.log('Fetching title of current rel '+ currentRelation.currentRelationshipStage.title)
 });
 

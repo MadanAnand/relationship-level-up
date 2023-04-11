@@ -3,6 +3,7 @@ import{React,useEffect, useState } from "react";
 import ObjectiveCard from './ObjectiveCard'
 import { client } from "../sanity";
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { CommonActions } from '@react-navigation/native';
 
 const ObjectiveCards = ({title}) => {
 
@@ -21,6 +22,17 @@ const ObjectiveCards = ({title}) => {
           });  
       
           },[] );
+
+          client
+          .patch('bb9ce9e3-7e8b-4ecb-8c7d-538ea6e4c54d')
+          .set({title: 'Stagee'})
+          .commit()
+          .then((patched) => {
+            console.log('Hurray, the bike is updated! New document:')
+            console.log(patched)
+          }).catch((err) => {
+            console.error('Oh no, the update failed: ', err.message)
+          });
           //console.log(stageObjective);
         //   stageObjective?.map(objective=>{
         //     console.log(objective.name);

@@ -28,12 +28,12 @@ const ObjectiveCards = ({title}) => {
           .set({title: 'Stagee'})
           .commit()
           .then((patched) => {
-            console.log('Hurray, the bike is updated! New document:')
+            console.log('Hurray, the document is updated! New document:')
             console.log(patched)
           }).catch((err) => {
             console.error('Oh no, the update failed: ', err.message)
           });
-          //console.log(stageObjective);
+          //console.log(stageObjective)
         //   stageObjective?.map(objective=>{
         //     console.log(objective.name);
         //   });

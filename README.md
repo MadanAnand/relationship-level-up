@@ -48,3 +48,4 @@ expo start
 
 15. bottom tabs : npm install @react-navigation/bottom-tabs
 16. Reading now on Sanity update operation : https://www.sanity.io/docs/transactions
+17. Now struck with biggest hurdle since the project began. How to mutate a record in Sanity from client .

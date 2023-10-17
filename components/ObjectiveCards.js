@@ -25,7 +25,7 @@ const ObjectiveCards = ({title}) => {
 
           client
           .patch('bb9ce9e3-7e8b-4ecb-8c7d-538ea6e4c54d')
-          .set({title: 'Stagee'})
+          .set({title: 'Stage'})
           .commit()
           .then((patched) => {
             console.log('Hurray, the document is updated! New document:')
